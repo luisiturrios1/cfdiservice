@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "==2.0.2"
+cfdiclient = "==1.4.2"
+python-dateutil = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
