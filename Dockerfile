@@ -1,12 +1,12 @@
-FROM python:3.8-slim-buster
+FROM python:3.9-slim-buster
 
 WORKDIR /app
 
-COPY ./requirements.txt ./requirements.txt
+COPY Pipfile Pipfile.lock ./
 
-RUN pip install pipenv 
-
-RUN pip install -r ./requirements.txt
+RUN pip install pipenv  \
+    && pipenv lock --keep-outdated --requirements > requirements.txt \
+    && pip install -r requirements.txt
 
 COPY ./ ./
 
